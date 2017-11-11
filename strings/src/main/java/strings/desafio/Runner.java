@@ -1,5 +1,7 @@
 package strings.desafio;
 
+import java.util.List;
+
 import org.apache.commons.validator.routines.IntegerValidator;
 
 public class Runner {
@@ -13,6 +15,16 @@ public class Runner {
 			System.exit(1);
 		}
 
+		TextFormatter textFormater = new TextFormatter();
+		textFormater.setNumLimit(IntegerValidator.getInstance().validate(args[0]));
+		textFormater.setJustify(new Boolean(args[1]));
+		textFormater.setText(args[2]);
+
+		List<String> result = textFormater.format();
+
+		for (String line : result) {
+			System.out.println(line);
+		}
 	}
 
 	static boolean validateArgs(String[] args) {

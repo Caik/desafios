@@ -1,24 +1,45 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>tk.caik</groupId>
-  <artifactId>strings.desafio</artifactId>
-  <version>0.0.1</version>
-  <name>Desafio Strings da ID Wall</name>
-  <description>Resoluçao do desafio "Strings" da ID Wall</description>
-  
-  <dependencies>
-  	<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  		<version>4.12</version>
-  		<scope>test</scope>
-  	</dependency>
-  	
-  	<dependency>
-	    <groupId>commons-validator</groupId>
-	    <artifactId>commons-validator</artifactId>
-	    <version>1.4.0</version>
-	</dependency>
-  </dependencies>
-  
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>tk.caik</groupId>
+	<artifactId>strings.desafio</artifactId>
+	<version>0.0.1</version>
+	<name>Desafio Strings da ID Wall</name>
+	<description>Resoluçao do desafio "Strings" da ID Wall</description>
+
+	<properties>
+		<jdk.version>1.8</jdk.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>true</downloadJavadocs>
+					<wtpversion>2.0</wtpversion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+	</dependencies>
+
 </project>
