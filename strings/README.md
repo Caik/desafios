@@ -16,3 +16,7 @@ onde:
 - true: Flag para justificação do texto.
 - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor...: Texto a ser formatado.
 - output.txt: Arquivo de saída onde será salvo o texto formatado (opcional).
+
+
+Carlos Henrique Severino
+caiik@live.com
