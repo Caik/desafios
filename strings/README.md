@@ -1,5 +1,10 @@
 # Desafio 1: Strings
 
+## Pré-requisitos:
+- Java 8
+- Maven 3.5
+
+
 ## Instalação
 1. `mvn clean install`
 
@@ -19,4 +24,5 @@ onde:
 
 
 Carlos Henrique Severino
+
 caiik@live.com
