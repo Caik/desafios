@@ -1,9 +1,11 @@
-package strings.desafio;
+package strings.desafios;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import strings.desafios.Runner;
 
 public class RunnerTest {
 

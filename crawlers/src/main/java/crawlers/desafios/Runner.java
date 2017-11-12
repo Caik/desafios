@@ -10,7 +10,7 @@ public class Runner {
 
 	public static void main(String[] args) {
 		if (!validateArgs(args)) {
-			System.out.println("Usage: java -jar strings.crawlers-deploy.jar subReddit1[;suReddit2;subReddit3...] [minScore]'");
+			System.out.println("Usage: java -jar crawlers.desafios-deploy.jar subReddit1[;suReddit2;subReddit3...] [minScore]'");
 			System.out.println(" - subReddit: String. Lista de um ou mais subReddits a serem consultados.");
 			System.out.println(" - minScore: Inteiro. Pontuação mímina da Thread a ser retornada (opcional: por padrão o valor é 5000).");
 			System.exit(1);
