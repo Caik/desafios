@@ -17,7 +17,7 @@ public class RedditBot extends TelegramLongPollingBot {
 
 	public static final String AUTH_TOKEN = "477614167:AAFJueYz6BTzLga__E7Bj62hgHMeKC5k7DE";
 
-	public static final String BOT_USERNAME = "Reddit Bot";
+	public static final String BOT_USERNAME = "IDWallCrawler_Bot";
 
 	public static final String NADA_PRA_FAZER_COMMAND = "/NadaPraFazer";
 
