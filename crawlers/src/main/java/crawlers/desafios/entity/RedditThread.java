@@ -1,6 +1,6 @@
 package crawlers.desafios.entity;
 
-public class Thread {
+public class RedditThread {
 
 	private String subReddit;
 
@@ -59,7 +59,8 @@ public class Thread {
 		ret += " - SubReddit: " + this.subReddit + "\n";
 		ret += " - Link: " + this.selfLink + "\n";
 		ret += " - Score: " + this.score + "\n";
-		ret += " - Comentários link: " + this.commentsLinks + "\n";
+		ret += " - Link para os comentários: " + this.commentsLinks + "\n";
+		ret += "----------------------------------------\n";
 
 		return ret;
 	}

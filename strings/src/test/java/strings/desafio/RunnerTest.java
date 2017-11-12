@@ -17,6 +17,7 @@ public class RunnerTest {
 		assertFalse(Runner.validateArgs(new String[] {"0", "true", "Texto a ser justificado"}));
 		assertFalse(Runner.validateArgs(new String[] {"-1", "true", "Texto a ser justificado"}));
 		assertFalse(Runner.validateArgs(new String[] {"40", "notBoolean", "Texto a ser justificado"}));
+
 		assertTrue(Runner.validateArgs(new String[] {"40", "true", "Texto a ser justificado"}));
 		assertTrue(Runner.validateArgs(new String[] {"1", "false", "Texto para teste mais longo do que o texto utilizado anteriormente"}));
 		assertTrue(Runner.validateArgs(new String[] {"1", "false", ""}));

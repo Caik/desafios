@@ -9,17 +9,17 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class SubReddit {
+public class SubRedditScraper {
 
 	private final String protocol = "http://";
 
-	private final String baseURL = "www.reddit.com/r/";
+	private final String baseUrl = "www.reddit.com/r/";
 
 	private String url;
 
-	private int minScore;
+	private int minScore = 5000;
 
-	private List<Thread> threads = new ArrayList<Thread>();
+	private List<RedditThread> threads = new ArrayList<RedditThread>();
 
 	public String getProtocol() {
 		return protocol;
@@ -41,20 +41,18 @@ public class SubReddit {
 		this.minScore = minScore;
 	}
 
-	public List<Thread> getThreads() {
+	public List<RedditThread> getThreads() {
 		return threads;
 	}
 
-	public void setThreads(List<Thread> threads) {
-		this.threads = threads;
-	}
-
-	public String getBaseURL() {
-		return baseURL;
+	public String getBaseUrl() {
+		return baseUrl;
 	}
 
 	public void requestThreads() throws IOException {
-		Document document = Jsoup.connect(this.protocol + this.baseURL + this.url).get();
+		this.threads = new ArrayList<RedditThread>();
+
+		Document document = Jsoup.connect(this.protocol + this.baseUrl + this.url).get();
 		Elements elements = document.getElementsByClass("thing");
 
 		for (Element element : elements) {
@@ -64,9 +62,9 @@ public class SubReddit {
 				continue;
 			}
 
-			Thread thread = new Thread();
+			RedditThread thread = new RedditThread();
 			thread.setScore(score);
-			thread.setCommentsLinks(this.protocol + this.baseURL + element.attr("data-permalink").replaceFirst("^/r/", ""));
+			thread.setCommentsLinks(this.protocol + this.baseUrl + element.attr("data-permalink").replaceFirst("^/r/", ""));
 			thread.setSelfLink(element.attr("data-url"));
 			thread.setSubReddit(element.attr("data-subreddit"));
 
@@ -77,14 +75,22 @@ public class SubReddit {
 		}
 	}
 
-	public void showThreads() {
+	public String getThreadsInText() {
+		String text = "";
+
 		if (this.threads.size() == 0) {
-			System.out.println("Nenhuma Thread a ser mostrada! Subreddit: " + this.url + ", Score mínimo: " + this.minScore + "\n");
-			return;
+			text += "Nenhuma Thread a ser mostrada!\n";
+			text += " - Subreddit: " + this.url + "\n";
+			text += " - Score mínimo: " + this.minScore + "\n";
+			text += "----------------------------------------\n";
+			return text;
 		}
 
-		for (Thread thread : this.threads) {
-			System.out.println(thread);
+		for (RedditThread thread : this.threads) {
+			text += thread;
 		}
+
+		return text;
 	}
+
 }
