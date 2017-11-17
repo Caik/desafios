@@ -31,7 +31,7 @@ onde:
 ```sh
 $ java -jar $crawlersPath/target/crawlers.desafios-bot-deploy.jar
 ```
-A partir daí, interagir com o BOT via Talegram.
+A partir daí, interagir com o BOT via Telegram.
 
 Para parar a execução do BOT:
 
